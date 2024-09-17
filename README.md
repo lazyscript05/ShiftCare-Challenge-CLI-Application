@@ -26,7 +26,7 @@ cd <repository-directory>
 
 ### Prepare the Data
 
-Make sure that `data.json` is located in the same directory as `cli.rb`. The JSON file should contain valid JSON data. Each client entry should be a valid JSON object, but the structure of the JSON data can vary as long as it is properly formatted.
+Make sure that `data.json` is located in the same directory as `cli.rb`. The JSON file should contain valid JSON data. Each data entry should be a valid JSON object, but the structure of the JSON data can vary as long as it is properly formatted.
 
 ## Usage
 
