@@ -185,7 +185,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
-    puma (6.4.2)
+    puma (6.4.3)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.7)
@@ -372,7 +372,7 @@ DEPENDENCIES
   jbuilder
   pagy (~> 9.0, >= 9.0.9)
   pg (~> 1.1)
-  puma (>= 5.0)
+  puma (~> 6.4, >= 6.4.3)
   rails (~> 7.2.1)
   rails-controller-testing
   rspec-rails (~> 7.0, >= 7.0.1)
