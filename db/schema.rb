@@ -20,5 +20,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_19_022640) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_clients_on_email"
+    t.index ["full_name"], name: "index_clients_on_full_name"
   end
 end
