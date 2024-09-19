@@ -1,50 +1,70 @@
-# ShiftCare Challenge CLI Application
+# Shiftcare Client Manager (Exam)
+Shiftcare Client Manager is a Ruby on Rails application designed to streamline the management of client information and care scheduling for healthcare professionals and agencies. It provides an easy-to-use interface for managing client profiles, tracking shifts, assigning caregivers, and ensuring that care is delivered efficiently. The platform helps healthcare providers maintain accurate records, streamline communication, and automate key processes involved in client care.
 
-## Overview
+# Prerequisites
 [![Ruby Style Guide](https://img.shields.io/badge/Ruby-3.3.5-red)](https://www.ruby-lang.org/en/news/2024/09/03/3-3-5-released/)
+[![Ruby Style Guide](https://img.shields.io/badge/Rails-7.2.1-brightgreen)](https://rubygems.org/gems/rails)
 
-This Ruby command-line application allows you to manage and search data dynamically. You can perform operations such as searching by a specific field or finding duplicate values. The application is designed to be flexible; it will automatically accept and use any valid JSON data as long as it follows the correct format, even if the data inside data.json changes.
-## Files
+# Features
+#### Offline Capability: `Thanks to PWA technology, works offline or on low-quality networks.`
+#### Responsive Design: `The app adapts to various screen sizes, from mobile phones to desktops.`
+#### Installable: `Users can install on their home screens for quick access.`
+#### CLI: `Can run in console` 
+```rake management_system:cli```
 
-- **`cli.rb`**: The main Ruby script for the command-line interface.
-- **`data.json`**: The JSON file containing data.
-
-## Setup
+# Setup
 
 ### Install Ruby
 
 Ensure you have Ruby installed on your system. You can download Ruby from the [official Ruby website](https://www.ruby-lang.org/en/downloads/) or use a version manager like [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/).
 
-### Download the Application
+### First-time setup
 
-Clone or download the repository containing `cli.rb` and `data.json` files to your local machine.
+1. install Ruby
+2. download and install postgresql. https://www.postgresql.org/download
+3. install RubyMine. https://www.jetbrains.com/ruby/download/#section=windows
+4. **Run** the following command.
 
+```bash
+gem install rails
 ```
-git clone <repository-url>
-cd <repository-directory>
+
+### Database and Master key
+
+Ask for the master.key files. This is needed for the local setup.
+
+# Running app on localhost
+
+1. Clone the repo or pull main branch.
+2. **Run** the following command.
+
+```bash
+cd ShiftCare-Challenge-CLI-Application
 ```
 
-### Prepare the Data
+```bash
+bundle install
+```
+### Database Setup
 
-Make sure that `data.json` is located in the same directory as `cli.rb`. The JSON file should contain valid JSON data. Each data entry should be a valid JSON object, but the structure of the JSON data can vary as long as it is properly formatted.
+Create, migrate and seed the database.
 
-## Usage
+```bash
+rake db:create
+rake db:migrate
+rake db:seed
+```
 
 ### Run the Application
 
-Make sure to install `terminal-table` and `rspec`
-```bash
-gem install terminal-table
-gem install rspec
-```
+3. Start the server by running `rails s` or press the play button or `SHIFT + F10` in RubyMine.
 
-Open your terminal, navigate to the directory containing `cli.rb`, and run the application with:
+You may edit the configuration and set the port to `3000` so that the server will run on **localhost:3000**.
 
-```bash
-ruby cli.rb
-```
 
-### Interact with the CLI
+
+
+## If you want to use the CLI - Interact with the CLI
 
 You will be presented with a menu with the following options:
 
@@ -54,7 +74,7 @@ You will be presented with a menu with the following options:
 
 Follow the prompts to make your selection and enter any required information.
 ```bash
-ruby cli.rb
+rake management_system:cli
 ```
 
 ### Running Tests
@@ -62,37 +82,6 @@ To run your RSpec tests, navigate to the root directory of your project and run:
 ```bash
 rspec
 ```
-
-## Assumptions
-
-- **File Paths**: The `data.json` file is expected to be in the same directory as the `cli.rb` script.
-- **JSON Structure**: The JSON file must be properly formatted. Each entry should be a valid JSON object, though the specific fields can vary. The application will display available fields dynamically based on the data present in the JSON file.
-- **Field Names**: Fields in the JSON file are assumed to be strings and are matched case-insensitively during searches.
-- **Error Handling**: Basic error handling is included for invalid choices and missing fields.
-
-## Troubleshooting
-
-### Missing `terminal-table` Gem
-
-If you encounter the following error:
-
-```
-require': cannot load such file -- terminal-table (LoadError)
-```
-
-You need to install the `terminal-table` gem. Run the following command to install it:
-
-```bash
-gem install terminal-table
-```
-
-### JSON File Issues
-
-If you encounter issues with loading the JSON file, ensure that the file is named correctly (`data.json`) and located in the same directory as `cli.rb`.
-
-### Ruby Installation
-
-Verify that Ruby is installed and correctly configured on your system.
 
 ## Code Signature
 
