@@ -6,7 +6,7 @@ class CreateClients < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
-      add_index :clients, :full_name
+    add_index :clients, :full_name
     add_index :clients, :email
   end
 end
