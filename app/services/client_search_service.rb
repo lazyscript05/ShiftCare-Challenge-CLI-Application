@@ -1,19 +1,13 @@
-# app/services/client_search_service.rb
 class ClientSearchService
-  # Initializes the service with a search query and field to search.
-  #
-  # @param query [String] The search query.
-  # @param field [String] The field to search within.
+  ALLOWED_FIELDS = %w[full_name email].freeze # Specify allowed fields
+
   def initialize(query:, field:)
     @query = query
-    @field = field
+    @field = field if ALLOWED_FIELDS.include?(field)
   end
 
-  # Searches for clients where the specified field matches the search query.
-  #
-  # @return [ActiveRecord::Relation] Clients that match the search criteria.
   def search
-    # Use ILIKE for case-insensitive partial match search
+    # Assuming @field has been validated
     Client.where("#{@field} ILIKE ?", "%#{@query}%")
   end
 end
