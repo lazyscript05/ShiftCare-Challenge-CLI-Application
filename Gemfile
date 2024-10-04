@@ -70,7 +70,7 @@ end
 gem "awesome_print", "~> 1.9", ">= 1.9.2"
 
 ## Pagination library
-gem "pagy", "~> 9.0", ">= 9.0.9"
+gem "pagy", "~> 9.1"
 
 # Use Sass to process CSS
 gem "sassc-rails"
